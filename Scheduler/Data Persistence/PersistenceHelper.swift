@@ -33,7 +33,7 @@ class DataPersistence <T: Writeable> {
   
   private func saveItemsToDocumentsDirectory() throws {
     do {
-      let url = FileManager.getPath(with: filename, for: .documentsDirectory)
+        let url = FileManager.getPath(with: filename, for: .documentsDirectory)
       let data = try PropertyListEncoder().encode(items)
       try data.write(to: url, options: .atomic)
     } catch {
